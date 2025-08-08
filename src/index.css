@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chicago / Chikarego2 font */
+@font-face{
+  font-family: 'Chikarego2';
+  src: url('/fonts/Chikarego2.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Utilities for authentic patterns */
+@layer utilities {
+  .bg-retro-dither {
+    background-color: theme(colors.retro.bg);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 1px, transparent 1px 2px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 2px);
+    background-position: 0 0, 1px 1px;
+    background-size: 2px 2px;
+    image-rendering: pixelated;
+  }
+  .retro-stripes {
+    background-image: repeating-linear-gradient(to bottom, #000 0 1px, transparent 1px 3px);
+  }
+  .retro-dither-45 {
+    background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.25) 0 1px, transparent 1px 3px);
+  }
+}

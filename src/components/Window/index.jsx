@@ -1,34 +1,58 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export function WindowWrap({ title = "Read Me", initial = { x: 220, y: 120, w: 880, h: 540 }, children }) {
+export function WindowWrap({
+  title = "Window",
+  initial = { x: 220, y: 120, w: 880, h: 540 },
+  children,
+  z = 20,
+  onClose,
+  onFocus
+}) {
   const [pos, setPos] = React.useState({ x: initial.x, y: initial.y });
   const size = { w: initial.w, h: initial.h };
 
   return (
     <motion.div
       className="absolute bg-white border border-black rounded-none overflow-hidden font-chicago"
-      style={{ left: pos.x, top: pos.y, width: size.w, height: size.h, zIndex: 20 }}
+      style={{ left: pos.x, top: pos.y, width: size.w, height: size.h, zIndex: z }}
       drag
       dragMomentum={false}
       onDrag={(e, info) => setPos(p => ({ x: p.x + info.delta.x, y: p.y + info.delta.y }))}
+      onMouseDown={() => onFocus && onFocus()} 
     >
       {/* hard offset shadow */}
       <div className="absolute -right-2 -bottom-2 w-full h-full bg-black/30 -z-10" />
 
-      {/* Titlebar: knob + stripes | title | stripes */}
+      {/* Titlebar */}
       <div className="relative h-8 bg-[#e3e3e3] border-b border-black grid grid-cols-[1fr_auto_1fr] items-center px-2">
+        {/* LEFT: close square + stripes */}
         <div className="flex items-center gap-1">
-          <div className="w-4 h-4 bg-white border border-black" />
+          {/* ▶ close button (top-left square) */}
+          <button
+            type="button"
+            aria-label="Close window"
+            title="Close"
+            className="group w-4 h-4 border border-black bg-white grid place-items-center hover:bg-black hover:text-white cursor-pointer"
+            onClick={(e) => { e.stopPropagation(); onClose && onClose(); }}
+            onMouseDown={(e) => e.stopPropagation()}  // prevent drag grab
+          >
+            <span className="text-[10px] leading-none opacity-0 group-hover:opacity-100">×</span>
+          </button>
+
           <div className="h-4 w-64 border border-black [background-image:repeating-linear-gradient(to_bottom,#000_0_1px,transparent_1px_3px)]" />
         </div>
+
+        {/* TITLE */}
         <div className="text-xl font-extrabold tracking-wide text-center">{title}</div>
-        <div className="flex justify-end">
+
+        {/* RIGHT: stripes block */}
+        <div className="flex items-center justify-end">
           <div className="h-4 w-64 border border-black [background-image:repeating-linear-gradient(to_bottom,#000_0_1px,transparent_1px_3px)]" />
         </div>
       </div>
 
-      {/* Inset frame to avoid touching outer border */}
+      {/* Inset frame */}
       <div className="absolute top-8 left-1.5 right-1.5 bottom-1.5 grid grid-cols-[1fr_22px] grid-rows-[1fr_22px]">
         {/* Content */}
         <div className="bg-white border-t border-l border-black overflow-auto">

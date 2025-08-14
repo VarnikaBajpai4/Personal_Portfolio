@@ -48,7 +48,10 @@ export const App = () => {
       <MenuBar />
 
       {/* Desktop background */}
-      <div className="relative h-[calc(100vh-3rem)] w-screen bg-[#c0c0c0] [background-image:repeating-linear-gradient(0deg,rgba(0,0,0,0.12)_0_1px,transparent_1px_2px),repeating-linear-gradient(90deg,rgba(0,0,0,0.12)_0_1px,transparent_1px_2px)] bg-[length:2px_2px]">
+      <div className="relative h-[calc(100vh-3rem)] w-screen overflow-hidden
+                bg-[#c0c0c0]
+                [background-image:repeating-linear-gradient(0deg,rgba(0,0,0,0.12)_0_1px,transparent_1px_2px),repeating-linear-gradient(90deg,rgba(0,0,0,0.12)_0_1px,transparent_1px_2px)]
+                bg-[length:2px_2px]">
         {/* Desktop icons (left column) */}
         <DesktopIcon label="README.txt"        icon={docIcon}     onOpen={() => openWin("readme")}        initial={{ x: 24, y:  40 }} />
         <DesktopIcon label="Projects/"         icon={folderIcon}  route="/projects"                        initial={{ x: 24, y: 180 }} />

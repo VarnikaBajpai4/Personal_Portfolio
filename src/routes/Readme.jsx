@@ -1,30 +1,24 @@
-import React from 'react'
-import { MenuBar } from '../components/MenuBar'
+import React from "react";
 
 export const Readme = () => (
-  <>
-    <MenuBar />
-    <div className="page">
-      <div className="page-window">
-        <div className="titlebar"><div className="dots"><div className="dot"></div><div className="dot"></div><div className="dot"></div></div><div className="title">Read Me</div></div>
-        <div className="page-content">
-          <h2>Varnika Bajpai</h2>
-          <p><em>Software Engineer & ML Developer — building elegant solutions with clean code.</em></p>
-          <h3>My Journey</h3>
-          <p>KJSCE (BTech IT, GPA 9.62). Internships at Barclays and G-Square. Active in CSI & Debating Society.</p>
-          <h3>What I Do</h3>
-          <ul>
-            <li>Full-stack: React, Node, Express, Mongo/Postgres</li>
-            <li>ML/AI: Python, LightGBM, pipelines & analysis</li>
-            <li>Data/BI: SQL/NoSQL, PowerBI, Tableau, GA</li>
-          </ul>
-          <div style={{display:'flex', gap:8, marginTop:8}}>
-            <a className="btn primary" href="/resume.pdf" target="_blank" rel="noreferrer">Download Résumé</a>
-            <a className="btn" href="/projects">View Projects</a>
-            <a className="btn" href="/contact">Contact Me</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </>
-)
+  <div className="space-y-4">
+    <h2 className="text-3xl font-extrabold">Varnika Bajpai</h2>
+    <p className="italic">
+      Software Engineer &amp; ML Developer — building elegant solutions with clean code.
+    </p>
+
+    <h3 className="text-2xl font-extrabold mt-6">My Journey</h3>
+    <p>
+      BTech (IT) at KJ Somaiya College of Engineering (GPA 9.62). Hands-on projects across
+      full-stack and ML, internships at Barclays and G-Square, plus community leadership in
+      CSI and the Debating Society.
+    </p>
+
+    <h3 className="text-2xl font-extrabold mt-6">What I Do</h3>
+    <ul className="list-disc ml-6 space-y-1 font-bold">
+      <li>Full-stack: React, Node, Express, MongoDB/Postgres</li>
+      <li>ML/AI: Python, scikit-learn/LightGBM, model pipelines & analytics</li>
+      <li>Data/BI: SQL/NoSQL, PowerBI, Tableau, Google Analytics</li>
+    </ul>
+  </div>
+);

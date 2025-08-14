@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export const DesktopIcon = ({ label, icon, route, onOpen, initial = { x: 24, y: 72 } }) => {
   const nav = useNavigate();
-  const handle = () => {
+  const draggingRef = React.useRef(false);
+
+  const handleOpen = () => {
+    if (draggingRef.current) return; 
     if (onOpen) onOpen();
     else if (route) nav(route);
   };
@@ -16,8 +19,11 @@ export const DesktopIcon = ({ label, icon, route, onOpen, initial = { x: 24, y: 
       drag
       dragMomentum={false}
       whileTap={{ scale: 0.98 }}
-      onDoubleClick={handle}
-      onClick={handle}
+      onDragStart={() => { draggingRef.current = true; }}
+      onDragEnd={() => {
+        setTimeout(() => { draggingRef.current = false; }, 0);
+      }}
+      onDoubleClick={handleOpen}  
     >
       <img
         className="block w-[84px] h-[84px] mb-2 filter grayscale"

@@ -1,25 +1,23 @@
-import React from 'react'
-import { MenuBar } from '../components/MenuBar'
+import React from "react";
 
 export const Experience = () => (
-  <>
-    <MenuBar />
-    <div className="page">
-      <div className="page-window">
-        <div className="titlebar"><div className="dots"><div className="dot"></div><div className="dot"></div><div className="dot"></div></div><div className="title">Work_Exp.doc</div></div>
-        <div className="page-content">
-          <h3>Barclays — Technology Summer Intern (May–Jul 2025)</h3>
-          <ul>
-            <li>Enterprise workflow automation & internal tooling.</li>
-            <li>Cross-team collaboration; ERG initiatives.</li>
-          </ul>
-          <h3>G-Square Solutions — Summer Intern (Jun–Jul 2024)</h3>
-          <ul>
-            <li>Backend ML models (Django/Flask), feature engineering & data analysis.</li>
-            <li>End-to-end ML lifecycle from preprocessing to deployment.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </>
-)
+  <div className="space-y-6">
+    <section>
+      <h3 className="text-2xl font-extrabold">Barclays — Intern</h3>
+      <p className="opacity-80 text-sm">Dates • Location</p>
+      <ul className="list-disc ml-6 mt-2 space-y-1">
+        <li>Key contribution or project outcome #1</li>
+        <li>Key contribution or project outcome #2</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 className="text-2xl font-extrabold">G-Square — Intern</h3>
+      <p className="opacity-80 text-sm">Dates • Location</p>
+      <ul className="list-disc ml-6 mt-2 space-y-1">
+        <li>Key contribution or project outcome #1</li>
+        <li>Key contribution or project outcome #2</li>
+      </ul>
+    </section>
+  </div>
+);

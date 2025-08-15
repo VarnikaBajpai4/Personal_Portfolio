@@ -7,12 +7,11 @@ import { Projects } from './routes/Projects'
 import { Experience } from './routes/Experience'
 import { Achievements } from './routes/Achievements'
 import { Contact } from './routes/Contact'
-import { injectGA } from './analytics/ga'
+import GAListener from "./components/GAListener";
 import './index.css'   // <-- Tailwind
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme'
 
-injectGA()
 
 const router = createBrowserRouter([
   { path: '/', element: <App /> },

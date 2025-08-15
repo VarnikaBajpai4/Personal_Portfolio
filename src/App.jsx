@@ -15,6 +15,8 @@ import docIcon from "./assets/icons/doc.svg";
 import archiveIcon from "./assets/icons/archive.svg";
 import appIcon from "./assets/icons/app.svg";
 
+import GAListener from "./components/GAListener";
+
 export const App = () => {
   // which windows are open (overlay on desktop)
   const [open, setOpen] = React.useState({
@@ -45,6 +47,7 @@ export const App = () => {
 
   return (
     <div className="h-full font-chicago">
+      <GAListener /> 
       <MenuBar />
 
       {/* Desktop background */}

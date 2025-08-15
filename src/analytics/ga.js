@@ -1,23 +1,11 @@
-export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_ID || 'G-XXXXXXX'
+export const GA_MEASUREMENT_ID = "G-68XNG9XZD6";
 
-export function sendEvent(action, params = {}) {
-  if (!window.gtag) return
-  window.gtag('event', action, params)
+export function trackPage(path) {
+  // Pageview for SPAs
+  window.gtag?.("config", GA_MEASUREMENT_ID, { page_path: path });
 }
 
-export function injectGA() {
-  if (GA_MEASUREMENT_ID === 'G-XXXXXXX') return
-  const s1 = document.createElement('script')
-  s1.async = true
-  s1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.appendChild(s1)
-
-  const s2 = document.createElement('script')
-  s2.innerHTML = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${GA_MEASUREMENT_ID}');
-  `
-  document.head.appendChild(s2)
+export function track(eventName, params = {}) {
+  // Custom events
+  window.gtag?.("event", eventName, params);
 }

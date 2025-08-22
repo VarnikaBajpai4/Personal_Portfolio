@@ -18,7 +18,7 @@ import appIcon from "./assets/icons/app.svg";
 import GAListener from "./components/GAListener";
 
 export const App = () => {
-  // which windows are open (overlay on desktop)
+
   const [open, setOpen] = React.useState({
     about: true,  
     readme: false,
@@ -41,7 +41,7 @@ export const App = () => {
 
   const openWin = (key) => {
     setOpen(o => ({ ...o, [key]: true }));
-    focusWin(key); // also bring to front when opened
+    focusWin(key); 
   };
   const closeWin = (key) => setOpen((o) => ({ ...o, [key]: false }));
 
@@ -71,6 +71,13 @@ export const App = () => {
             onClose={() => closeWin("about")}
             onFocus={() => focusWin("about")}
           >
+
+
+          <h1 className="sr-only">
+            Varnika — Software Engineer & ML Developer Portfolio
+          </h1>
+
+
           <h2 className="text-3xl font-extrabold mb-4">Welcome 👋</h2>
           <p className="mb-6 max-w-3xl">
             This portfolio is a mini desktop styled after classic Macintosh System 6/7.
@@ -79,7 +86,7 @@ export const App = () => {
           </p>
           
 
-          <h3 className="text-2xl font-extrabold mb-2">What’s on the Desktop</h3>
+          <h2 className="text-2xl font-extrabold mb-2">What’s on the Desktop</h2>
           <ul className="list-disc ml-6 mb-6 space-y-1">
             <li><strong>README.txt</strong> — my journey & background.</li>
             <li><strong>Projects/</strong> — selected work with build logs (coming soon).</li>

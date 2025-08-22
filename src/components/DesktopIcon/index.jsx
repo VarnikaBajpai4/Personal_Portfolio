@@ -8,6 +8,15 @@ export const DesktopIcon = ({ label, icon, route, onOpen, initial = { x: 24, y: 
 
   const handleOpen = () => {
     if (draggingRef.current) return; 
+
+    // GA4 event tracking
+    if (window.gtag) {
+      window.gtag('event', 'desktop_icon_open', {
+        icon_label: label,
+        page_location: window.location.href
+      });
+    }
+
     if (onOpen) onOpen();
     else if (route) nav(route);
   };
@@ -23,7 +32,7 @@ export const DesktopIcon = ({ label, icon, route, onOpen, initial = { x: 24, y: 
       onDragEnd={() => {
         setTimeout(() => { draggingRef.current = false; }, 0);
       }}
-      onDoubleClick={handleOpen}  
+      onDoubleClick={handleOpen}
     >
       <img
         className="block w-[84px] h-[84px] mb-2 filter grayscale"

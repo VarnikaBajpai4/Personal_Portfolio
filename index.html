@@ -1,27 +1,101 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Varnika | Software Engineer & ML Developer | Retro Mac Portfolio</title>
+  
+    <!-- Canonical & robots -->
+    <link rel="canonical" href="https://personal-portfolio-rho-rose-25.vercel.app/" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  
+    <!-- SEO Meta -->
     <meta name="description" content="Software Engineer & ML Developer — building elegant solutions with clean code." />
+    <meta name="keywords" content="Varnika, Software Engineer, Machine Learning Developer, Portfolio, Projects" />
+    <meta name="author" content="Varnika Bajpai" />
+  
+    <!-- Open Graph -->
     <meta property="og:title" content="Varnika — Retro Mac Portfolio" />
     <meta property="og:description" content="Software Engineer & ML Developer — building elegant solutions with clean code." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="https://personal-portfolio-rho-rose-25.vercel.app/" />
+    <meta property="og:site_name" content="Varnika Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://personal-portfolio-rho-rose-25.vercel.app/preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+  
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" />
+    <!-- Optional extra icons/manifest -->
+    <!--
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#111111" />
+    -->
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Varnika | Software Engineer & ML Developer" />
+    <meta name="twitter:description" content="Retro Mac style portfolio showcasing projects, internships, and achievements." />
+    <meta name="twitter:image" content="https://personal-portfolio-rho-rose-25.vercel.app/preview.png" />
+  
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-68XNG9XZD6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-68XNG9XZD6');
-</script>
+    </script>
+  
+    <!-- Visually hidden styles -->
+    <style>
+      .visually-hidden {
+        position: absolute !important;
+        left: -9999px !important;
+        top: auto !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+      }
+    </style>
+  
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Varnika Bajpai",
+      "jobTitle": "Software Engineer & ML Developer",
+      "url": "https://personal-portfolio-rho-rose-25.vercel.app/",
+      "sameAs": [
+          "https://github.com/VarnikaBajpai4/",
+          "https://www.linkedin.com/in/varnika-bajpai-6106a2258/",
+          "mailto:bajpaivarnika04@gmail.com"
+        ]
+    }
+    </script>
+  
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Varnika Portfolio",
+      "url": "https://personal-portfolio-rho-rose-25.vercel.app/"
+    }
+    </script>
   </head>
+  
   <body>
+    <!-- Invisible headings for SEO -->
+    <h1 class="visually-hidden">Varnika — Software Engineer & ML Developer Portfolio</h1>
+    <h2 class="visually-hidden">Projects, Experience, and Achievements</h2>
+    <h3 class="visually-hidden">Contact Information and Social Links</h3>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

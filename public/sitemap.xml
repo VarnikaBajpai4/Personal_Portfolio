@@ -1,10 +1,8 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url>
-  <url><loc>/readme</loc></url>
-  <url><loc>/projects</loc></url>
-  <url><loc>/experience</loc></url>
-  <url><loc>/achievements</loc></url>
-  <url><loc>/contact</loc></url>
+  <url>
+    <loc>https://personal-portfolio-rho-rose-25.vercel.app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>

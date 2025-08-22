@@ -73,12 +73,12 @@ export const App = () => {
           >
 
 
-          <h1 className="sr-only">
+          <h1 className="text-3xl font-extrabold mb-4">
             Varnika — Software Engineer & ML Developer Portfolio
           </h1>
 
 
-          <h2 className="text-3xl font-extrabold mb-4">Welcome 👋</h2>
+          <h2 className="text-2xl font-extrabold mb-4">Welcome 👋</h2>
           <p className="mb-6 max-w-3xl">
             This portfolio is a mini desktop styled after classic Macintosh System 6/7.
             Double-click the icons on the left to explore sections. Everything is built with
